@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Sh1zzuko">
+  <meta name="keywords" content="">
+  <title>读《Google工作整理术》有感 - Sh1zzuko&#39;s blogs</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Sh1zzuko's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="iconfont icon-home-fill"></i>
+              首页</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">
+              <i class="iconfont icon-archive-fill"></i>
+              归档</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">
+              <i class="iconfont icon-category-fill"></i>
+              分类</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">
+              <i class="iconfont icon-tags-fill"></i>
+              标签</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">
+              <i class="iconfont icon-user-fill"></i>
+              关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+                <div class="mt-3 post-meta">
+                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+                  <time datetime="2020-04-03 20:20">
+                    2020年4月3日 晚上
+                  </time>
+                </div>
+              
+
+              <div class="mt-1">
+                
+                  
+                  <span class="post-meta mr-2">
+                    <i class="iconfont icon-chart"></i>
+                    1.8k 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta mr-2">
+                      <i class="iconfont icon-clock-fill"></i>
+                    
+                    
+                    18
+                     分钟
+                  </span>
+                
+
+                
+              </div>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p><img src="/images/reading-girl1-1024x576.png" srcset="/img/loading.gif" alt=""></p>
+<p>这是一本我在很早时就买了的一本书，又一本买了没看的书</p>
+<p>这本书和前面所阅读的两本不同（《书都不会读，你还想成功》、《敏感的人如何面对外界压力》），前两本中作者有着很明显的规划与指导(简单说，就是遇到什么情况，你就应该怎么做)，而这一本，更多的是提供一种思路，让你自己放手去做，寻找自己的答案（确实在这本书中的一些建议在中国是不适用的）</p>
+<p>在我看来，这本书分为三个部分：</p>
+<p>1.基础理论：一些通用的组织原理和客观事实</p>
+<p>2.具体步骤：作者亲身实践得出适用于他自己的一套可行方案</p>
+<p>3.克服挑战：做好准备，趁早行动，为克服即将到来的挑战做好准备</p>
+<h1 id="作者的21条建议"><a href="#作者的21条建议" class="headerlink" title="作者的21条建议"></a>作者的21条建议</h1><p>1.为了实现大脑压力最小化，要把生活组织得有条不紊</p>
+<p>2.让信息尽可能快的离开大脑</p>
+<p>3.多重任务通常会让你降低效率</p>
+<p>4.利用故事去记忆</p>
+<p>5.仅仅因为一直都是按照特定方式做某事，并不意味着就应该永远这样做</p>
+<p>6.知识不是力量，共享知识才是力量</p>
+<p>7.进行组织安排时，妖娆开的是实际制约而不是假性制约</p>
+<p>8.对自己要坦诚，但是千万不要自我评判</p>
+<p>9.要懂得什么时候忽略制约（例如恐惧）</p>
+<p>10.在发动汽车之前，一定要确切的搞清楚自己要到哪里去，还要知道选择什么途径去</p>
+<p>11.在实现目标的方式上要灵活变通</p>
+<p>12.不要给信息归档，用的时候去搜索就行了</p>
+<p>13.大脑中只保存真正需要记忆的内容</p>
+<p>14.大块内容要化整为零</p>
+<p>15.每周拿出时间回顾关键信息</p>
+<p>16.没有完美无缺的组织方法</p>
+<p>17.在数字信息中添加关键字，以便日后更容易找到</p>
+<p>18.尽量使用已经上手的工具</p>
+<p>19.及时加注解，以助于快速进入工作状态</p>
+<p>20.把类似的工作安排在一起</p>
+<p>21.把生活和工作融为一体，不要在两者之间寻求平衡</p>
+<h1 id="与之前的经历相联系"><a href="#与之前的经历相联系" class="headerlink" title="与之前的经历相联系"></a>与之前的经历相联系</h1><p>读完整本书让我会想起曾经的那段时光，那时生活强度并不大到哪里去，却总是能忙的我焦头烂额，看完之后我就马上有了答案</p>
+<ol>
+<li>有很多的突发事件会打断我的思路，正如上面第3条所说，不要同时做多件事情，这样会使得效率下降</li>
+<li>由于效率下降，学习时长就会增加，就会延长学习时间，增加了自己的负面情绪（那时的我还是试图将个人兴趣和生活完全隔离开来，所以我感觉到兴趣被生活所侵占了）</li>
+<li>于是我就会报复：我会占用部分的学习时间用于娱乐，导致学习时间进一步延长</li>
+<li>娱乐不能使大脑休息，长时间的学习和娱乐不停歇，导致大脑过度劳累，效率进一步下降</li>
+<li>重复第2条…恶性循环！！</li>
+</ol>
+<h1 id="与作者产生共鸣的片段"><a href="#与作者产生共鸣的片段" class="headerlink" title="与作者产生共鸣的片段"></a>与作者产生共鸣的片段</h1><ol>
+<li>我们对人的大脑和社会结构的认识方式与它们的实际运行机制之间存在严重脱节，再加上层出不穷的信息时时分散着我们的注意力，这是我们如今处于紊乱无序状态的关键问题。</li>
+<li>紊乱无序让你感到重重压力，重重压力让你举措失当，举措失当让你承受更大的压力，更大的压力让你更加失误连连。</li>
+<li>大脑的工作方式是我们实现有序组织面临的最大挑战。</li>
+<li>当以不同于初始编码的形式或语境追忆信息时，我们大脑会遇到麻烦，很快我们就会看到，这一困难会成为有序组织的巨大障碍（例如记忆手机号码）</li>
+<li>一些著名的认知学家研究过这一现象，他们得出结论：当有新的选择出现时，我们倾向于质疑最初的选择（与我的状况不谋而合）</li>
+<li>逐一看看每个选项，你就可以避免一次面对太多选择时让大脑承受好大的负担。你也会在最能实现渴求结果的选择上仔细斟酌。</li>
+<li>做决定的关键在于弄明白你的目标是什么，并确定它们的优先次序。</li>
+<li>害怕是人人都会面临的最大制约</li>
+<li>在不可预料的意外发生之前，要提前预备好制约的应对策略，而不是到时候再想办法</li>
+<li>界定清晰的目标以及实现目标的计划都会为你做的每一件事提供背景和目的，在它们的帮助下，组织获取所需要的信息和行动的效率就会高得多。</li>
+<li>为了做到井然有序，在充分考虑实际制约的同时，你要做的每一件事都要从自己的目标出发</li>
+<li>为了一个可实现的目标，制定一个可接受的计划，胜过为了一项不可能完成的任务而制定一个堪称完美的计划。</li>
+<li>你面对的任务和问题，或者类似的任务和问题，有些人可能已经完成或者解决了，所以在开始着手之前，先看看别人是怎么解决的(没有必要每件事都亲自去制定方案完成)</li>
+<li>花点时间在值得信赖的优秀信息源获取信息就好，不要被过多的信息所困扰</li>
+<li>对于犹豫不决的决定:把支持和反对的意见都记下来，过两三天再重新思考</li>
+</ol>
+<h1 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h1><p>正如上面所说，作者也不过是提供一种有序组织的思路来减轻你大脑的压力从而轻松应对挑战，还是需要你根据这些思路来制定属于自己的工作方式，但是仍有一些非常好的，可实施的具体建议</p>
+<ol>
+<li>熟练使用搜索引擎，例如精确搜索，去除指定内容，指定范围等</li>
+<li>选择几种称手的工具，例如:我浏览器书签同步使用Chrome，待办事项用滴答清单，零散的灵感用小米便签通讯录使用小米和Google，专业知识信息笔记使用有道云笔记，这些工具能使你不需要的信息快速离开大脑，需要它们的时候又能快速找到</li>
+<li>早睡早起，规律作息的好处比你想象的还要多</li>
+</ol>
+<p>这么一本书居然看了我这么久(买了之后也放了好久)，需要治治我的拖延症了。。</p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/05/05/%E5%85%B3%E4%BA%8E%E3%80%8A%E5%90%8E%E6%B5%AA%E3%80%8B%E7%9A%84%E7%9C%8B%E6%B3%95/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">关于《后浪》的看法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/02/09/%E5%9C%A8Java%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%89%A7%E8%A1%8Ccmd%E5%91%BD%E4%BB%A4/">
+                        <span class="hidden-mobile">在Java程序中执行cmd命令</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <script defer src="https://utteranc.es/client.js"
+          repo="N1shimiya/commit-utterances"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+  >
+  </script>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+    <!-- APlayer 音乐播放器 -->
+    <div id="aplayer"></div>
+    <script defer src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js" ></script>
+<link  rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+<script type="text/javascript">
+  var oldLoadAp = window.onload;
+  window.onload = function () {
+    oldLoadAp && oldLoadAp();
+
+    new APlayer({
+      container: document.getElementById('aplayer'),
+      fixed: true,
+      autoplay: 'ture' === 'true',
+      loop: 'all',
+      order: 'random',
+      theme: '#b7daff',
+      preload: 'none',
+      audio: [{"name":"ねむるまち feat.yama","artist":"くじら","url":"/songs/test.mp3","cover":"/img/cover.jpg"}]
+    });
+  }
+</script>
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/main.js" ></script>
+
+
+  <script  src="/js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "读《Google工作整理术》有感&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
