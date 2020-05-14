@@ -1,188 +1,49 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
+    <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
+<link rel="stylesheet" href="/styles/main.css">
 
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/N1shimiya/CDN/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/N1shimiya/CDN/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
-  <meta name="author" content="Sh1zzuko">
-  <meta name="keywords" content="">
-  <title> 使用cloudflare workers构建镜像站 - Sh1zzuko&#39;s blogs</title>
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
-<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
-
-
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-<meta name="generator" content="Hexo 4.2.0"></head>
-
-
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Sh1zzuko's blog</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/">
-              <i class="iconfont icon-home-fill"></i>
-              首页</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">
-              <i class="iconfont icon-archive-fill"></i>
-              归档</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">
-              <i class="iconfont icon-category-fill"></i>
-              分类</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">
-              <i class="iconfont icon-tags-fill"></i>
-              标签</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">
-              <i class="iconfont icon-user-fill"></i>
-              关于</a>
-          </li>
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/N1shimiya/CDN/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-              
-                <div class="mt-3 post-meta">
-                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2019-09-29 19:41">
-                    2019年9月29日 晚上
-                  </time>
-                </div>
-              
-
-              <div class="mt-1">
-                
-                  
-                  <span class="post-meta mr-2">
-                    <i class="iconfont icon-chart"></i>
-                    1.1k 字
-                  </span>
-                
-
-                
-                  
-                  <span class="post-meta mr-2">
-                      <i class="iconfont icon-clock-fill"></i>
-                    
-                    
-                    15
-                     分钟
-                  </span>
-                
-
-                
-              </div>
-            
-          </div>
-
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
+    <meta name="generator" content="Hexo 4.2.0"></head>
+    <body>
+        <div class="container">
+            <header>
+<div class="main">
+<div class="title">
+    <a href="#" class="logo">Sh1zzuko&#39;s blog</a>
+</div>
+<div class="site-nav">
+    <ul id="menu" class="menu">
     
-      
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <div class="post-content mx-auto" id="post">
+        <li class="menu-item text-underline">
+            <a href="/">主页</a>
+        </li>
+    
+        <li class="menu-item text-underline">
+            <a href="/archives">归档</a>
+        </li>
+    
+        <li class="menu-item text-underline">
+            <a href="https://n1shimiya.github.io/2019/03/16/About-me/" target="_blank" rel="noopener">关于</a>
+        </li>
             
-            <article class="markdown-body">
-              <p><img src="https://cdn.jsdelivr.net/gh/N1shimiya/CDN/11.png" srcset="/img/loading.gif" alt="img"></p>
+    </ul>
+</div>
+</div>
+</header>
+            <main class="main">
+                <section class="posts clearfix">
+<div class="post-wrapper">
+    <article class="post article-entry">
+    <div class="post-title">
+         使用cloudflare workers构建镜像站
+    </div>
+    <p class="sub">9月 29 2019</p>
+    <div class="post-content">
+        <p><img src="https://cdn.jsdelivr.net/gh/N1shimiya/CDN/11.png" alt="img"></p>
 <p>虽然有代理工具能帮助我们访问不存在的网站，但是这终究还是多了一个步骤，挂上代理，而购买/自建代理还可能产生一笔费用（尽管不贵）<br>如果你只有简单的需求，比如只是单纯的想要一个广告更少、搜索结果更精确的搜索引擎，不妨试试自建一个镜像站</p>
 <h1 id="什么是cloudflare-workers"><a href="#什么是cloudflare-workers" class="headerlink" title="什么是cloudflare workers"></a>什么是cloudflare workers</h1><p>cloudflare就不多阐述了，业界大佬，提供了很多方便开发者的<del>白嫖</del>免费服务，workers就是其中之一<br>用他们的话说就是：</p>
 <blockquote>
@@ -211,420 +72,110 @@
 <li>再点击<code>launch editor</code>，选择新建的worker，点击<code>deploy</code></li>
 <li>等待生效，一般5分钟之内就能完成</li>
 </ol>
-<h2 id="代码段"><a href="#代码段" class="headerlink" title="代码段"></a>代码段</h2><pre><code class="hljs js"><span class="hljs-comment">// 替换成你想镜像的站点</span>
-<span class="hljs-keyword">const</span> upstream = <span class="hljs-string">'www.google.com'</span>
- 
-<span class="hljs-comment">// 如果那个站点有专门的移动适配站点，否则保持和上面一致</span>
-<span class="hljs-keyword">const</span> upstream_mobile = <span class="hljs-string">'www.google.com'</span>
- 
-<span class="hljs-comment">// 你希望禁止哪些国家访问</span>
-<span class="hljs-keyword">const</span> blocked_region = [<span class="hljs-string">'KP'</span>, <span class="hljs-string">'SY'</span>, <span class="hljs-string">'PK'</span>, <span class="hljs-string">'CU'</span>]
- 
-<span class="hljs-comment">// 禁止自访问</span>
-<span class="hljs-keyword">const</span> blocked_ip_address = [<span class="hljs-string">'0.0.0.0'</span>, <span class="hljs-string">'127.0.0.1'</span>]
- 
-<span class="hljs-comment">// 替换成你想镜像的站点</span>
-<span class="hljs-keyword">const</span> replace_dict = &#123;
-    <span class="hljs-string">'$upstream'</span>: <span class="hljs-string">'$custom_domain'</span>,
-    <span class="hljs-string">'//google.com'</span>: <span class="hljs-string">''</span>
-&#125;
- 
-<span class="hljs-comment">//以下内容都不用动</span>
-addEventListener(<span class="hljs-string">'fetch'</span>, event =&gt; &#123;
-    event.respondWith(fetchAndApply(event.request));
-&#125;)
- 
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetchAndApply</span>(<span class="hljs-params">request</span>) </span>&#123;
- 
-    <span class="hljs-keyword">const</span> region = request.headers.get(<span class="hljs-string">'cf-ipcountry'</span>).toUpperCase();
-    <span class="hljs-keyword">const</span> ip_address = request.headers.get(<span class="hljs-string">'cf-connecting-ip'</span>);
-    <span class="hljs-keyword">const</span> user_agent = request.headers.get(<span class="hljs-string">'user-agent'</span>);
- 
-    <span class="hljs-keyword">let</span> response = <span class="hljs-literal">null</span>;
-    <span class="hljs-keyword">let</span> url = <span class="hljs-keyword">new</span> URL(request.url);
-    <span class="hljs-keyword">let</span> url_host = url.host;
- 
-    <span class="hljs-keyword">if</span> (url.protocol == <span class="hljs-string">'http:'</span>) &#123;
-        url.protocol = <span class="hljs-string">'https:'</span>
-        response = Response.redirect(url.href);
-        <span class="hljs-keyword">return</span> response;
-    &#125;
- 
-    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">await</span> device_status(user_agent)) &#123;
-        upstream_domain = upstream
-    &#125; <span class="hljs-keyword">else</span> &#123;
-        upstream_domain = upstream_mobile
-    &#125;
- 
-    url.host = upstream_domain;
- 
-    <span class="hljs-keyword">if</span> (blocked_region.includes(region)) &#123;
-        response = <span class="hljs-keyword">new</span> Response(<span class="hljs-string">'Access denied: WorkersProxy is not available in your region yet.'</span>, &#123;
-            status: <span class="hljs-number">403</span>
-        &#125;);
-    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(blocked_ip_address.includes(ip_address))&#123;
-        response = <span class="hljs-keyword">new</span> Response(<span class="hljs-string">'Access denied: Your IP address is blocked by WorkersProxy.'</span>, &#123;
-            status: <span class="hljs-number">403</span>
-        &#125;);
-    &#125; <span class="hljs-keyword">else</span>&#123;
-        <span class="hljs-keyword">let</span> method = request.method;
-        <span class="hljs-keyword">let</span> request_headers = request.headers;
-        <span class="hljs-keyword">let</span> new_request_headers = <span class="hljs-keyword">new</span> Headers(request_headers);
- 
-        new_request_headers.set(<span class="hljs-string">'Host'</span>, upstream_domain);
-        new_request_headers.set(<span class="hljs-string">'Referer'</span>, url.href);
- 
-        <span class="hljs-keyword">let</span> original_response = <span class="hljs-keyword">await</span> fetch(url.href, &#123;
-            method: method,
-            headers: new_request_headers
-        &#125;)
- 
-        <span class="hljs-keyword">let</span> original_response_clone = original_response.clone();
-        <span class="hljs-keyword">let</span> original_text = <span class="hljs-literal">null</span>;
-        <span class="hljs-keyword">let</span> response_headers = original_response.headers;
-        <span class="hljs-keyword">let</span> new_response_headers = <span class="hljs-keyword">new</span> Headers(response_headers);
-        <span class="hljs-keyword">let</span> status = original_response.status;
- 
-        new_response_headers.set(<span class="hljs-string">'access-control-allow-origin'</span>, <span class="hljs-string">'*'</span>);
-        new_response_headers.set(<span class="hljs-string">'access-control-allow-credentials'</span>, <span class="hljs-literal">true</span>);
-        new_response_headers.delete(<span class="hljs-string">'content-security-policy'</span>);
-        new_response_headers.delete(<span class="hljs-string">'content-security-policy-report-only'</span>);
-        new_response_headers.delete(<span class="hljs-string">'clear-site-data'</span>);
- 
-        <span class="hljs-keyword">const</span> content_type = new_response_headers.get(<span class="hljs-string">'content-type'</span>);
-        <span class="hljs-keyword">if</span> (content_type.includes(<span class="hljs-string">'text/html'</span>) &amp;&amp; content_type.includes(<span class="hljs-string">'UTF-8'</span>)) &#123;
-            original_text = <span class="hljs-keyword">await</span> replace_response_text(original_response_clone, upstream_domain, url_host);
-        &#125; <span class="hljs-keyword">else</span> &#123;
-            original_text = original_response_clone.body
-        &#125;
- 
-        response = <span class="hljs-keyword">new</span> Response(original_text, &#123;
-            status,
-            headers: new_response_headers
-        &#125;)
-    &#125;
-    <span class="hljs-keyword">return</span> response;
-&#125;
- 
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">replace_response_text</span>(<span class="hljs-params">response, upstream_domain, host_name</span>) </span>&#123;
-    <span class="hljs-keyword">let</span> text = <span class="hljs-keyword">await</span> response.text()
- 
-    <span class="hljs-keyword">var</span> i, j;
-    <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> replace_dict) &#123;
-        j = replace_dict[i]
-        <span class="hljs-keyword">if</span> (i == <span class="hljs-string">'$upstream'</span>) &#123;
-            i = upstream_domain
-        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (i == <span class="hljs-string">'$custom_domain'</span>) &#123;
-            i = host_name
-        &#125;
- 
-        <span class="hljs-keyword">if</span> (j == <span class="hljs-string">'$upstream'</span>) &#123;
-            j = upstream_domain
-        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j == <span class="hljs-string">'$custom_domain'</span>) &#123;
-            j = host_name
-        &#125;
- 
-        <span class="hljs-keyword">let</span> re = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(i, <span class="hljs-string">'g'</span>)
-        text = text.replace(re, j);
-    &#125;
-    <span class="hljs-keyword">return</span> text;
-&#125;
- 
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">device_status</span> (<span class="hljs-params">user_agent_info</span>) </span>&#123;
-    <span class="hljs-keyword">var</span> agents = [<span class="hljs-string">"Android"</span>, <span class="hljs-string">"iPhone"</span>, <span class="hljs-string">"SymbianOS"</span>, <span class="hljs-string">"Windows Phone"</span>, <span class="hljs-string">"iPad"</span>, <span class="hljs-string">"iPod"</span>];
-    <span class="hljs-keyword">var</span> flag = <span class="hljs-literal">true</span>;
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> v = <span class="hljs-number">0</span>; v &lt; agents.length; v++) &#123;
-        <span class="hljs-keyword">if</span> (user_agent_info.indexOf(agents[v]) &gt; <span class="hljs-number">0</span>) &#123;
-            flag = <span class="hljs-literal">false</span>;
-            <span class="hljs-keyword">break</span>;
-        &#125;
-    &#125;
-    <span class="hljs-keyword">return</span> flag;
-&#125;</code></pre>
+<h2 id="代码段"><a href="#代码段" class="headerlink" title="代码段"></a>代码段</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 替换成你想镜像的站点</span></span><br><span class="line"><span class="keyword">const</span> upstream = <span class="string">'www.google.com'</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 如果那个站点有专门的移动适配站点，否则保持和上面一致</span></span><br><span class="line"><span class="keyword">const</span> upstream_mobile = <span class="string">'www.google.com'</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 你希望禁止哪些国家访问</span></span><br><span class="line"><span class="keyword">const</span> blocked_region = [<span class="string">'KP'</span>, <span class="string">'SY'</span>, <span class="string">'PK'</span>, <span class="string">'CU'</span>]</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 禁止自访问</span></span><br><span class="line"><span class="keyword">const</span> blocked_ip_address = [<span class="string">'0.0.0.0'</span>, <span class="string">'127.0.0.1'</span>]</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 替换成你想镜像的站点</span></span><br><span class="line"><span class="keyword">const</span> replace_dict = &#123;</span><br><span class="line">    <span class="string">'$upstream'</span>: <span class="string">'$custom_domain'</span>,</span><br><span class="line">    <span class="string">'//google.com'</span>: <span class="string">''</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//以下内容都不用动</span></span><br><span class="line">addEventListener(<span class="string">'fetch'</span>, event =&gt; &#123;</span><br><span class="line">    event.respondWith(fetchAndApply(event.request));</span><br><span class="line">&#125;)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fetchAndApply</span>(<span class="params">request</span>) </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">const</span> region = request.headers.get(<span class="string">'cf-ipcountry'</span>).toUpperCase();</span><br><span class="line">    <span class="keyword">const</span> ip_address = request.headers.get(<span class="string">'cf-connecting-ip'</span>);</span><br><span class="line">    <span class="keyword">const</span> user_agent = request.headers.get(<span class="string">'user-agent'</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">let</span> response = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">let</span> url = <span class="keyword">new</span> URL(request.url);</span><br><span class="line">    <span class="keyword">let</span> url_host = url.host;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (url.protocol == <span class="string">'http:'</span>) &#123;</span><br><span class="line">        url.protocol = <span class="string">'https:'</span></span><br><span class="line">        response = Response.redirect(url.href);</span><br><span class="line">        <span class="keyword">return</span> response;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">await</span> device_status(user_agent)) &#123;</span><br><span class="line">        upstream_domain = upstream</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        upstream_domain = upstream_mobile</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    url.host = upstream_domain;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (blocked_region.includes(region)) &#123;</span><br><span class="line">        response = <span class="keyword">new</span> Response(<span class="string">'Access denied: WorkersProxy is not available in your region yet.'</span>, &#123;</span><br><span class="line">            status: <span class="number">403</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(blocked_ip_address.includes(ip_address))&#123;</span><br><span class="line">        response = <span class="keyword">new</span> Response(<span class="string">'Access denied: Your IP address is blocked by WorkersProxy.'</span>, &#123;</span><br><span class="line">            status: <span class="number">403</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> method = request.method;</span><br><span class="line">        <span class="keyword">let</span> request_headers = request.headers;</span><br><span class="line">        <span class="keyword">let</span> new_request_headers = <span class="keyword">new</span> Headers(request_headers);</span><br><span class="line"> </span><br><span class="line">        new_request_headers.set(<span class="string">'Host'</span>, upstream_domain);</span><br><span class="line">        new_request_headers.set(<span class="string">'Referer'</span>, url.href);</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">let</span> original_response = <span class="keyword">await</span> fetch(url.href, &#123;</span><br><span class="line">            method: method,</span><br><span class="line">            headers: new_request_headers</span><br><span class="line">        &#125;)</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">let</span> original_response_clone = original_response.clone();</span><br><span class="line">        <span class="keyword">let</span> original_text = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">let</span> response_headers = original_response.headers;</span><br><span class="line">        <span class="keyword">let</span> new_response_headers = <span class="keyword">new</span> Headers(response_headers);</span><br><span class="line">        <span class="keyword">let</span> status = original_response.status;</span><br><span class="line"> </span><br><span class="line">        new_response_headers.set(<span class="string">'access-control-allow-origin'</span>, <span class="string">'*'</span>);</span><br><span class="line">        new_response_headers.set(<span class="string">'access-control-allow-credentials'</span>, <span class="literal">true</span>);</span><br><span class="line">        new_response_headers.delete(<span class="string">'content-security-policy'</span>);</span><br><span class="line">        new_response_headers.delete(<span class="string">'content-security-policy-report-only'</span>);</span><br><span class="line">        new_response_headers.delete(<span class="string">'clear-site-data'</span>);</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">const</span> content_type = new_response_headers.get(<span class="string">'content-type'</span>);</span><br><span class="line">        <span class="keyword">if</span> (content_type.includes(<span class="string">'text/html'</span>) &amp;&amp; content_type.includes(<span class="string">'UTF-8'</span>)) &#123;</span><br><span class="line">            original_text = <span class="keyword">await</span> replace_response_text(original_response_clone, upstream_domain, url_host);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            original_text = original_response_clone.body</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        response = <span class="keyword">new</span> Response(original_text, &#123;</span><br><span class="line">            status,</span><br><span class="line">            headers: new_response_headers</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> response;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">replace_response_text</span>(<span class="params">response, upstream_domain, host_name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> text = <span class="keyword">await</span> response.text()</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">var</span> i, j;</span><br><span class="line">    <span class="keyword">for</span> (i <span class="keyword">in</span> replace_dict) &#123;</span><br><span class="line">        j = replace_dict[i]</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="string">'$upstream'</span>) &#123;</span><br><span class="line">            i = upstream_domain</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="string">'$custom_domain'</span>) &#123;</span><br><span class="line">            i = host_name</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (j == <span class="string">'$upstream'</span>) &#123;</span><br><span class="line">            j = upstream_domain</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j == <span class="string">'$custom_domain'</span>) &#123;</span><br><span class="line">            j = host_name</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">let</span> re = <span class="keyword">new</span> <span class="built_in">RegExp</span>(i, <span class="string">'g'</span>)</span><br><span class="line">        text = text.replace(re, j);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> text;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">device_status</span> (<span class="params">user_agent_info</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> agents = [<span class="string">"Android"</span>, <span class="string">"iPhone"</span>, <span class="string">"SymbianOS"</span>, <span class="string">"Windows Phone"</span>, <span class="string">"iPad"</span>, <span class="string">"iPod"</span>];</span><br><span class="line">    <span class="keyword">var</span> flag = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> v = <span class="number">0</span>; v &lt; agents.length; v++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (user_agent_info.indexOf(agents[v]) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            flag = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/Siujoeng-Lau/WorkersProxy">github-WorkersProxy</a></p>
 
-            </article>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
+    </div>
+    </article>
+</div>
+
+    <div class="_toc">
+        <strong class="toc-title">
+        Contents
+        </strong>
+        <div class="toc-content">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是cloudflare-workers"><span class="toc-text">什么是cloudflare workers</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前提条件"><span class="toc-text">前提条件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#假如我想镜像Google"><span class="toc-text">假如我想镜像Google</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#如果你只满足条件1"><span class="toc-text">如果你只满足条件1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如果你同时满足条件1、2"><span class="toc-text">如果你同时满足条件1、2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码段"><span class="toc-text">代码段</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+        </div>
+    </div>
+
+</section>
+
+
+    <nav class="post-nav">
+        
+            <div class="page-tags">
                 
-                
-              </div>
-              
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
-              
-              
-                <div class="post-prevnext row">
-                  <div class="post-prev col-6">
-                    
-                    
-                      <a href="/2019/10/12/%E8%AF%BB%E3%80%8A%E4%B9%A6%E9%83%BD%E4%B8%8D%E4%BC%9A%E8%AF%BB%EF%BC%8C%E4%BD%A0%E8%BF%98%E6%83%B3%E6%88%90%E5%8A%9F%E3%80%8B%E6%9C%89%E6%84%9F/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">读《书都不会读，你还想成功》有感</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </div>
-                  <div class="post-next col-6">
-                    
-                    
-                      <a href="/2019/09/12/%E8%AF%BB%E3%80%8A%E6%95%8F%E6%84%9F%E7%9A%84%E4%BA%BA%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9%E5%A4%96%E7%95%8C%E5%8E%8B%E5%8A%9B%E3%80%8B%E6%9C%89%E6%84%9F/">
-                        <span class="hidden-mobile">读《敏感的人如何面对外界压力》有感</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </div>
-                </div>
-              
             </div>
+        
+    </nav>
 
-            
-              <!-- Comments -->
-              <div class="comments" id="comments">
+
+
+    <nav class="paginator clearfix">
+        
+            <a class="prev" href="/2019/10/12/%E8%AF%BB%E3%80%8A%E4%B9%A6%E9%83%BD%E4%B8%8D%E4%BC%9A%E8%AF%BB%EF%BC%8C%E4%BD%A0%E8%BF%98%E6%83%B3%E6%88%90%E5%8A%9F%E3%80%8B%E6%9C%89%E6%84%9F/">
+                <i class="iconfont icon-left"></i>
+                <span class="prev-text">读《书都不会读，你还想成功》有感</span>
+            </a>
+        
+        
+            <a class="next" href="/2019/09/12/%E8%AF%BB%E3%80%8A%E6%95%8F%E6%84%9F%E7%9A%84%E4%BA%BA%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9%E5%A4%96%E7%95%8C%E5%8E%8B%E5%8A%9B%E3%80%8B%E6%9C%89%E6%84%9F/">
                 
-                
-  <script defer src="https://utteranc.es/client.js"
-          repo="N1shimiya/commit-utterances"
-          issue-term="pathname"
-  
-          label="utterances"
-    
-          theme="github-light"
-          crossorigin="anonymous"
-  >
-  </script>
+                <span class="prev-text">读《敏感的人如何面对外界压力》有感</span>
+                <i class="iconfont icon-right"></i>
+            </a>
+        
+    </nav>
 
 
-              </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div id="tocbot"></div>
-</div>
-
-      </div>
-    
+            </main>
+            <div class="copyright">
+  <div class="text">Powered By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> | Theme <a href="https://github.com/zjx137/hexo-theme-Tsu">Tsu</a> &copy 2019
   </div>
 </div>
 
-<!-- Custom -->
-
+        </div>
+    <div class="back-to-top" id="back-to-top">
+            <i class="iconfont icon-up"></i>
+    </div>
+        
+    </body>
+    
+<script src="/js/jquery-3.3.1.min.js"></script>
 
     
-  </main>
+<script src="/js/back-to-top.js"></script>
 
-  
-    <a id="scroll-top-button" href="#" role="button">
-      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-    </a>
-  
+    
+<script src="/js/scroll.js"></script>
 
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-  
-
-  
-    <!-- APlayer 音乐播放器 -->
-    <div id="aplayer"></div>
-    <script defer src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js" ></script>
-<link  rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
-<script type="text/javascript">
-  var oldLoadAp = window.onload;
-  window.onload = function () {
-    oldLoadAp && oldLoadAp();
-
-    new APlayer({
-      container: document.getElementById('aplayer'),
-      fixed: true,
-      autoplay: 'ture' === 'true',
-      loop: 'all',
-      order: 'random',
-      theme: '#b7daff',
-      preload: 'none',
-      audio: [{"name":"ねむるまち feat.yama","artist":"くじら","url":"/songs/test.mp3","cover":"/img/cover.jpg"}]
+    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": { 
+        preferredFont: "TeX", 
+        availableFonts: ["STIX","TeX"], 
+        linebreaks: { automatic:true }, 
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) 
+    },
+    tex2jax: { 
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ], 
+        processEscapes: true, 
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {  
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, 
+        Macros: { href: "{}" } 
+    },
+    messageStyle: "none"
+    }); 
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
     });
-  }
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-  
-
-  
-
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
-        <span>Fluid</span></a>
-    </div>
-    
-
-    
-
-    
-  </div>
-</footer>
-
-<!-- SCRIPTS -->
-<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
-<script  src="/js/main.js" ></script>
-
-
-  <script  src="/js/lazyload.js" ></script>
-
-
-
-  
-  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      var boardCtn = $('#board-ctn');
-      var boardTop = boardCtn.offset().top;
-
-      tocbot.init({
-        tocSelector: '#tocbot',
-        contentSelector: '.post-content',
-        headingSelector: 'h1,h2,h3,h4,h5,h6',
-        linkClass: 'tocbot-link',
-        activeLinkClass: 'tocbot-active-link',
-        listClass: 'tocbot-list',
-        isCollapsedClass: 'tocbot-is-collapsed',
-        collapsibleClass: 'tocbot-is-collapsible',
-        collapseDepth: 0,
-        scrollSmooth: true,
-        headingsOffset: -boardTop
-      });
-      if ($('.toc-list-item').length > 0) {
-        $('#toc').css('visibility', 'visible');
-      }
-    });
-  </script>
-
-
-
-
-
-  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
-  <script  src="/js/clipboard-use.js" ></script>
-
-
-
-
-
-
-<!-- Plugins -->
-
-
-
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        " 使用cloudflare workers构建镜像站&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "hover",
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-  <script>
-    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
-      function () {
-        var element = document.createElement('a');
-        $(element).attr('data-fancybox', 'images');
-        $(element).attr('href', $(this).attr('src'));
-        $(this).wrap(element);
-      }
-    );
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
 </html>
