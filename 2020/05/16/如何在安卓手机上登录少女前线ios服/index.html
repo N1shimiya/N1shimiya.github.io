@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>使用adb卸载华为自带app - Sh1zzuko&#39;s blog</title>
+  <title>如何在安卓手机上登录少女前线ios服 - Sh1zzuko&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -133,8 +133,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-09 05:01">
-                    2020年5月9日 凌晨
+                  <time datetime="2020-05-16 05:49">
+                    2020年5月16日 凌晨
                   </time>
                 </div>
               
@@ -144,7 +144,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.6k 字
+                    310 字
                   </span>
                 
 
@@ -154,7 +154,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    21
+                    3
                      分钟
                   </span>
                 
@@ -183,637 +183,30 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p><img src="https://cdn.jsdelivr.net/gh/N1shimiya/CDN/8.png" srcset="/img/loading.gif" alt="img"></p>
-<p>EMUI提供了很多方便功能的同时，系统看起来也很臃肿，强迫症总想把这些没什么卵用的app干掉…</p>
-<p>注意：</p>
-<ol>
-<li>此方法适用于能连接adb的Android，不限于EMUI</li>
-<li>教程使用windows 10演示，但也可以在macOS和Linux上使用</li>
-<li>如果你还没有adb，你可以在<a href="https://developer.android.com/studio/releases/platform-tools" target="_blank" rel="noopener">这里</a>下载</li>
-<li><strong>使用前记得打开手机的开发者模式并允许当前电脑进行USB调试</strong>，你可以在<a href="https://www.baidu.com/s?wd=打开手机usb调试" target="_blank" rel="noopener">这里</a>了解更多信息</li>
-</ol>
-<h1 id="检查adb连接"><a href="#检查adb连接" class="headerlink" title="检查adb连接"></a>检查adb连接</h1><p>检查adb连接是否连接到设备</p>
-<div class="hljs"><pre><code class="hljs adb">adb devices</code></pre></div>
-
-<p>如果在 List of devices attached 下出现了设备的名称则说明连接成功</p>
-<h1 id="选择你喜欢的方式来处理"><a href="#选择你喜欢的方式来处理" class="headerlink" title="选择你喜欢的方式来处理"></a>选择你喜欢的方式来处理</h1><h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p>是最干净的卸载方式，但卸载的app有可能通过后续更新回到你的手机上</p>
-<div class="hljs"><pre><code class="hljs adb">adb shell pm uninstall --user 0 应用包名</code></pre></div>
-
-<h2 id="禁用"><a href="#禁用" class="headerlink" title="禁用"></a>禁用</h2><p>如果害怕卸载app后导致不可挽回的后果，可以选择禁用，禁用后的app有可能通过后续更新/重启回到你的手机上</p>
-<div class="hljs"><pre><code class="hljs adb">adb shell pm disable --user 0 应用包名</code></pre></div>
-
-<h1 id="那些讨厌的家伙们"><a href="#那些讨厌的家伙们" class="headerlink" title="那些讨厌的家伙们"></a>那些讨厌的家伙们</h1><p>下面是我觉得可以删除的app，你可根据自己的需要进行选择：</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>应用包名</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>百度输入法华为版</td>
-<td>com.baidu.input_huawei</td>
-</tr>
-<tr>
-<td>华为安全输入法</td>
-<td>com.huawei.secime</td>
-</tr>
-<tr>
-<td>AOSP输入法</td>
-<td>com.android.inputmethod.latin</td>
-</tr>
-<tr>
-<td>华为视频</td>
-<td>com.huawei.himovie</td>
-</tr>
-<tr>
-<td>天际通</td>
-<td>com.huawei.hiskytone</td>
-</tr>
-<tr>
-<td>天际通数据服务</td>
-<td>com.huawei.skytone</td>
-</tr>
-<tr>
-<td>华为钱包</td>
-<td>com.huawei.wallet</td>
-</tr>
-<tr>
-<td>华为钱包安全支付</td>
-<td>com.huawei.android.hwpay</td>
-</tr>
-<tr>
-<td>支付保护中心</td>
-<td>com.huawei.trustspace</td>
-</tr>
-<tr>
-<td>学生模式</td>
-<td>com.huawei.parentcontrol</td>
-</tr>
-<tr>
-<td>驾驶模式</td>
-<td>com.huawei.vdrive</td>
-</tr>
-<tr>
-<td>查找我的手机</td>
-<td>com.huawei.android.findmyphone</td>
-</tr>
-<tr>
-<td>系统更新</td>
-<td>com.huawei.android.hwouc</td>
-</tr>
-<tr>
-<td>推送服务</td>
-<td>com.huawei.android.pushagent</td>
-</tr>
-<tr>
-<td>在线黄页</td>
-<td>com.huawei.yellowpage</td>
-</tr>
-<tr>
-<td>华为游戏中心</td>
-<td>com.huawei.gamebox</td>
-</tr>
-<tr>
-<td>华为健康</td>
-<td>com.huawei.ihealth</td>
-</tr>
-<tr>
-<td>华为阅读</td>
-<td>com.huawei.hwireader</td>
-</tr>
-<tr>
-<td>华为移动服务</td>
-<td>com.huawei.hwid</td>
-</tr>
-<tr>
-<td>语音助手</td>
-<td>com.huawei.vassistant</td>
-</tr>
-<tr>
-<td>安装向导</td>
-<td>com.huawei.hwstartupguide</td>
-</tr>
-<tr>
-<td>用户体验计划</td>
-<td>com.huawei.bd</td>
-</tr>
-<tr>
-<td>手表应用同步</td>
-<td>com.huawei.watch.sync</td>
-</tr>
-<tr>
-<td>负一屏</td>
-<td>com.huawei.hiboard</td>
-</tr>
-<tr>
-<td>会员服务</td>
-<td>com.huawei.phoneservice</td>
-</tr>
-<tr>
-<td>打印处理服务</td>
-<td>com.android.printspooler</td>
-</tr>
-<tr>
-<td>浏览器</td>
-<td>com.android.browser</td>
-</tr>
-<tr>
-<td>音乐</td>
-<td>com.android.mediacenter</td>
-</tr>
-<tr>
-<td>华为商城</td>
-<td>com.vmall.client</td>
-</tr>
-<tr>
-<td>讯飞语音引擎) 可卸载，微信、QQ等语音聊天不影响</td>
-<td>com.iflytek.speechsuite</td>
-</tr>
-<tr>
-<td>情景智能</td>
-<td>com.huawei.intelligent</td>
-</tr>
-<tr>
-<td>多屏互动</td>
-<td>com.huawei.android.airsharing</td>
-</tr>
-<tr>
-<td>基本互动屏保</td>
-<td>com.android.dreams.basic</td>
-</tr>
-<tr>
-<td>图片屏保程序</td>
-<td>com.android.dreams.phototable</td>
-</tr>
-<tr>
-<td>TalkBack</td>
-<td>com.google.android.marvin.talkback</td>
-</tr>
-<tr>
-<td>动态壁纸</td>
-<td>com.android.wallpaper.livepicker</td>
-</tr>
-<tr>
-<td>NFC服务</td>
-<td>com.android.nfc</td>
-</tr>
-<tr>
-<td>名片全能王</td>
-<td>com.huawei.contactscamcard</td>
-</tr>
-<tr>
-<td>智能检测</td>
-<td>com.huawei.hwdetectrepair</td>
-</tr>
-<tr>
-<td>智能解锁</td>
-<td>com.huawei.trustagent</td>
-</tr>
-<tr>
-<td>智能线控</td>
-<td>com.huawei.internetaudioservice</td>
-</tr>
-<tr>
-<td>华为桌面</td>
-<td>com.huawei.android.launcher</td>
-</tr>
-<tr>
-<td>华山</td>
-<td>com.huawei.livewallpaper.matewenty</td>
-</tr>
-<tr>
-<td>华为应用市场</td>
-<td>com.huawei.appmarket</td>
-</tr>
-<tr>
-<td>华为杂志锁屏</td>
-<td>com.android.keyguard</td>
-</tr>
-<tr>
-<td>浏览器</td>
-<td>com.huawei.browser</td>
-</tr>
-<tr>
-<td>灭屏显示</td>
-<td>com.huawei.aod</td>
-</tr>
-<tr>
-<td>情景智能</td>
-<td>com.huawei.suggestion</td>
-</tr>
-<tr>
-<td>双卡管理</td>
-<td>com.huawei.android.dsdscardmanager</td>
-</tr>
-<tr>
-<td>文件</td>
-<td>com.android.documentsui</td>
-</tr>
-<tr>
-<td>文件管理</td>
-<td>com.huawei.hidisk</td>
-</tr>
-<tr>
-<td>我的文件</td>
-<td>com.huawei.desktop.explorer</td>
-</tr>
-<tr>
-<td>悬浮导航</td>
-<td>com.huawei.android.FloatTasks</td>
-</tr>
-<tr>
-<td>讯飞语音引擎</td>
-<td>com.ifytek.speechsuite</td>
-</tr>
-<tr>
-<td>隐私空间</td>
-<td>com.huawei.securitymgr</td>
-</tr>
-<tr>
-<td>主题</td>
-<td>com.huawei.android.thememan</td>
-</tr>
-<tr>
-<td>谷歌备份传输</td>
-<td>com.google.android.backuptransport</td>
-</tr>
-<tr>
-<td>谷歌服务框架</td>
-<td>com.google.android.gsf</td>
-</tr>
-<tr>
-<td>谷歌one time</td>
-<td>com.google.android.onetimeinitializer</td>
-</tr>
-<tr>
-<td>谷歌play服务</td>
-<td>com.google.android.gms</td>
-</tr>
-<tr>
-<td>谷歌play商店</td>
-<td>com.android.vebding</td>
-</tr>
-<tr>
-<td>谷歌合作伙伴设置</td>
-<td>com.google.android.partnersetup</td>
-</tr>
-<tr>
-<td>稻穗屏保</td>
-<td>com.andeoid.wallpaper.livepicker</td>
-</tr>
-<tr>
-<td>sim应用</td>
-<td>com.android.stk</td>
-</tr>
-<tr>
-<td>相机</td>
-<td>com.huawei.camera</td>
-</tr>
-<tr>
-<td>android Services Library</td>
-<td>com.google.android.ext.services</td>
-</tr>
-<tr>
-<td>通话/信息存储</td>
-<td>com.android.providers.telephony</td>
-</tr>
-<tr>
-<td>录音机</td>
-<td>com.android.phone.recorder</td>
-</tr>
-<tr>
-<td>日历存储</td>
-<td>com.android.providers.calendar</td>
-</tr>
-<tr>
-<td>运动健康</td>
-<td>com.huawei.health</td>
-</tr>
-<tr>
-<td>通过蓝牙导入</td>
-<td>com.huawei.bluetooth</td>
-</tr>
-<tr>
-<td>媒体存储</td>
-<td>com.android.providers.media</td>
-</tr>
-<tr>
-<td>主题</td>
-<td>com.huawei.android.thememanager</td>
-</tr>
-<tr>
-<td>HwChrService</td>
-<td>com.huawei.android.chr</td>
-</tr>
-<tr>
-<td>华为框架服务</td>
-<td>com.huawei.android.hsf</td>
-</tr>
-<tr>
-<td>壁纸裁剪器</td>
-<td>com.android.wallpapercropper</td>
-</tr>
-<tr>
-<td>手势服务</td>
-<td>com.huawei.motionservice</td>
-</tr>
-<tr>
-<td>SmartcardService</td>
-<td>org.simalliance.openmobileapi.service</td>
-</tr>
-<tr>
-<td>外部存储设备</td>
-<td>com.android.externalstorage</td>
-</tr>
-<tr>
-<td>HTML查看器</td>
-<td>com.android.htmlviewer</td>
-</tr>
-<tr>
-<td>天气</td>
-<td>com.huawei.android.totemweather</td>
-</tr>
-<tr>
-<td>下载管理器</td>
-<td>com.android.providers.downloads</td>
-</tr>
-<tr>
-<td>大众点评</td>
-<td>com.dianping.v1</td>
-</tr>
-<tr>
-<td>华为Swype输入法</td>
-<td>com.nuance.swype.emui</td>
-</tr>
-<tr>
-<td>位置共享</td>
-<td>com.huawei.locationsharing</td>
-</tr>
-<tr>
-<td>短信加密</td>
-<td>com.huawei.cryptosms.service</td>
-</tr>
-<tr>
-<td>VNC远程控制</td>
-<td>com.realvnc.android.remote</td>
-</tr>
-<tr>
-<td>屏幕录制</td>
-<td>com.huawei.screenrecorder</td>
-</tr>
-<tr>
-<td>视频编辑</td>
-<td>com.huawei.videoeditor</td>
-</tr>
-<tr>
-<td>录音机</td>
-<td>com.android.soundrecorder</td>
-</tr>
-<tr>
-<td>备份</td>
-<td>com.huawei.KoBackup</td>
-</tr>
-<tr>
-<td>华为视频优酷版</td>
-<td>com.huawei.hwvplayer.youku</td>
-</tr>
-<tr>
-<td>软件包访问帮助程序</td>
-<td>com.android.defcontainer</td>
-</tr>
-<tr>
-<td>下载内容</td>
-<td>com.android.providers.downloads.ui</td>
-</tr>
-<tr>
-<td>凤凰新闻</td>
-<td>com.ifeng.news2</td>
-</tr>
-<tr>
-<td>Quik</td>
-<td>com.stupeflix.replay</td>
-</tr>
-<tr>
-<td>证书安装器</td>
-<td>com.android.certinstaller</td>
-</tr>
-<tr>
-<td>花粉俱乐部</td>
-<td>com.huawei.fans</td>
-</tr>
-<tr>
-<td>远程协助</td>
-<td>com.huawei.remoteassistant</td>
-</tr>
-<tr>
-<td>联系人</td>
-<td>com.android.contacts</td>
-</tr>
-<tr>
-<td>信息</td>
-<td>com.android.mms</td>
-</tr>
-<tr>
-<td>MTP服务</td>
-<td>com.android.mtp</td>
-</tr>
-<tr>
-<td>Huawei Share</td>
-<td>com.huawei.android.instantshare</td>
-</tr>
-<tr>
-<td>Intent Filter Verification Services</td>
-<td>com.android.statementservice</td>
-</tr>
-<tr>
-<td>Huawei Share</td>
-<td>com.huawei.android.internal.app</td>
-</tr>
-<tr>
-<td>日历</td>
-<td>com.android.calendar</td>
-</tr>
-<tr>
-<td>拨号</td>
-<td>com.android.incallui</td>
-</tr>
-<tr>
-<td>手机管家</td>
-<td>com.huawei.systemmanager</td>
-</tr>
-<tr>
-<td>输入设备</td>
-<td>com.android.inputdevices</td>
-</tr>
-<tr>
-<td>滚动截屏</td>
-<td>com.huawei.HwMultiScreenShot</td>
-</tr>
-<tr>
-<td>通话管理</td>
-<td>com.android.server.telecom</td>
-</tr>
-<tr>
-<td>备忘录</td>
-<td>com.example.android.notepad</td>
-</tr>
-<tr>
-<td>密钥链</td>
-<td>com.android.keychain</td>
-</tr>
-<tr>
-<td>图库</td>
-<td>com.android.gallery3d</td>
-</tr>
-<tr>
-<td>打包安装程序</td>
-<td>com.android.packageinstaller</td>
-</tr>
-<tr>
-<td>Pico TTS</td>
-<td>com.svox.pico</td>
-</tr>
-<tr>
-<td>无线分享</td>
-<td>com.huawei.android.mirrorshare</td>
-</tr>
-<tr>
-<td>工作资料设置</td>
-<td>com.android.managedprovisioning</td>
-</tr>
-<tr>
-<td>指南针</td>
-<td>com.huawei.compass</td>
-</tr>
-<tr>
-<td>WLAN直连</td>
-<td>com.huawei.android.wfdft</td>
-</tr>
-<tr>
-<td>高德位置服务</td>
-<td>com.amap.android.ams</td>
-</tr>
-<tr>
-<td>标记</td>
-<td>com.android.apps.tag</td>
-</tr>
-<tr>
-<td>省电精灵</td>
-<td>com.huawei.powergenie</td>
-</tr>
-<tr>
-<td>智能截屏</td>
-<td>com.qeexo.smartshot</td>
-</tr>
-<tr>
-<td>神州租车</td>
-<td>com.szzc.ucar.pilot</td>
-</tr>
-<tr>
-<td>计算器</td>
-<td>com.android.calculator2</td>
-</tr>
-<tr>
-<td>高德地图</td>
-<td>com.autonavi.minimap</td>
-</tr>
-<tr>
-<td>工程菜单</td>
-<td>com.huawei.android.projectmenu</td>
-</tr>
-<tr>
-<td>携程旅行</td>
-<td>ctrip.android.view</td>
-</tr>
-<tr>
-<td>地理围栏</td>
-<td>com.huawei.geofence</td>
-</tr>
-<tr>
-<td>VPN设置</td>
-<td>com.android.vpndialogs</td>
-</tr>
-<tr>
-<td>行为识别</td>
-<td>com.huawei.android.location.activityrecognition</td>
-</tr>
-<tr>
-<td>电子邮件</td>
-<td>com.android.email</td>
-</tr>
-<tr>
-<td>新浪微博</td>
-<td>com.sina.weibo</td>
-</tr>
-<tr>
-<td>拨号</td>
-<td>com.android.phone</td>
-</tr>
-<tr>
-<td>存储已屏蔽的号码</td>
-<td>com.android.providers.blockednumber</td>
-</tr>
-<tr>
-<td>用户词典</td>
-<td>com.android.providers.userdictionary</td>
-</tr>
-<tr>
-<td>个人紧急信息</td>
-<td>com.android.emergency</td>
-</tr>
-<tr>
-<td>扫一扫</td>
-<td>com.huawei.scanner</td>
-</tr>
-<tr>
-<td>融合定位</td>
-<td>com.android.location.fused</td>
-</tr>
-<tr>
-<td>时钟</td>
-<td>com.android.deskclock</td>
-</tr>
-<tr>
-<td>系统界面</td>
-<td>com.android.systemui</td>
-</tr>
-<tr>
-<td>Exchange服务</td>
-<td>com.android.exchange</td>
-</tr>
-<tr>
-<td>HwLBSService</td>
-<td>com.huawei.lbs</td>
-</tr>
-<tr>
-<td>蓝牙</td>
-<td>com.android.bluetooth</td>
-</tr>
-<tr>
-<td>联系人存储</td>
-<td>com.android.providers.contacts</td>
-</tr>
-<tr>
-<td>镜子</td>
-<td>com.android.hwmirror</td>
-</tr>
-<tr>
-<td>WPS</td>
-<td>cn.wps.moffice_eng</td>
-</tr>
-</tbody></table>
-<p>如果你觉得还不够，可以通过下面命令来查看还有哪些讨厌的家伙</p>
-<div class="hljs"><pre><code class="hljs adb">adb shell pm list packages</code></pre></div>
-
-<h1 id="处理EMUI手机分身中的多余app"><a href="#处理EMUI手机分身中的多余app" class="headerlink" title="处理EMUI手机分身中的多余app"></a>处理EMUI手机分身中的多余app</h1><p>如果你使用EMUI的手机多用户功能，你就会发现，前面卸载的app现在又回来了</p>
-<p>使用下面命令查看手机当前的用户，用户0是你的主用户，那么另外一个就是你的双开用户了</p>
-<div class="hljs"><pre><code class="hljs adb">adb shell pm list users</code></pre></div>
-
-<p>那么将卸载命令替换为下面命令即可</p>
-<div class="hljs"><pre><code class="hljs adb">adb shell pm uninstall --user 用户名id 应用包名</code></pre></div>
-
-<p>但是经过测试，某些应用即便是卸载也会在重启后恢复</p>
+              <p><img src="https://cdn.jsdelivr.net/gh/N1shimiya/CDN/73147803_p0_master1200.jpg" srcset="/img/loading.gif" alt="img"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自从我从ios的设备更换为安卓的设备之后，就再也没有接触过手机游戏，偶尔一天想起来曾经在ios上玩的少女前线，当初为了这个游戏也投入了不少时间和精力，现在换了安卓，不知何时才能用回ios，于是经过几日的探索，终于找到了可以在安卓手机上玩ios服的方法。</p>
+<h2 id="教程起步"><a href="#教程起步" class="headerlink" title="教程起步"></a>教程起步</h2><p>1.首先你要在你的安卓手机上安装少女前线官方的apk</p>
+<p>2.<a href="https://amanekanata.cowtransfer.com/s/3537c2544ea545" target="_blank" rel="noopener">安装</a>Hosts Go（无需ROOT，模拟器通用）</p>
+<p>3.进入Hosts Go，点击Hosts设置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/N1shimiya/CDN/adudouad.png" srcset="/img/loading.gif" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/N1shimiya/CDN/chbajkf.png" srcset="/img/loading.gif" alt="img"></p>
+<p>4.添加两个域名</p>
+<p>第一个域名：</p>
+<blockquote>
+<p>IP地址:123.56.15.113</p>
+<p>域名:gfcn-transit.gw.sunborngame.com</p>
+</blockquote>
+<p>第二个域名：</p>
+<blockquote>
+<p>IP地址:47.95.53.9</p>
+<p>域名gfcn-transit.ios.sunborngame.com</p>
+</blockquote>
+<p>5.添加完两个域名以后，回到Hosts Go主界面，打开HOSTS保护和DNS保护</p>
+<p>6.点击启动，确保软件在后台运行的同时打开少女前线，开始下载资源。</p>
+<p>7.资源下载完毕，开始游戏</p>
+<p>tip:在你成功登录ios服之后就可以把Hosts Go关掉了，这样可以有效加快转圈速度。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>1.<a href="http://tieba.baidu.com/p/5833919331?share=9105&fr=share&see_lz=0&sfc=copy&client_type=2&client_version=9.4.8.9&st=1589601903&unique=47AAE84375FAABF2F76CC0BA0C992FF5" target="_blank" rel="noopener">贴吧</a></p>
+<p>2<a href="https://bbs.nga.cn/read.php?tid=21648873&rand=305" target="_blank" rel="noopener">.NGA</a></p>
 
             </article>
             <hr>
@@ -828,13 +221,6 @@
                   </div>
                 
                 
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Skill/">Skill</a>
-                    
-                  </div>
-                
               </div>
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
@@ -844,18 +230,12 @@
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/05/09/%E5%85%B3%E4%BA%8E%E5%86%8D%E6%AC%A1%E5%BC%80%E8%AE%BE%E7%9A%84minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">关于再次开设的minecraft服务器</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </div>
                   <div class="post-next col-6">
                     
                     
-                      <a href="/2020/05/05/%E5%85%B3%E4%BA%8E%E3%80%8A%E5%90%8E%E6%B5%AA%E3%80%8B%E7%9A%84%E7%9C%8B%E6%B3%95/">
-                        <span class="hidden-mobile">关于《后浪》的看法</span>
+                      <a href="/2020/05/15/FuckMythware-%E6%9E%81%E5%9F%9F%E7%94%B5%E5%AD%90%E6%95%99%E5%AE%A4%E8%BE%85%E5%8A%A9%E5%B7%A5%E5%85%B7/">
+                        <span class="hidden-mobile">FuckMythware - 极域电子教室辅助工具</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -1040,7 +420,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "使用adb卸载华为自带app&nbsp;",
+        "如何在安卓手机上登录少女前线ios服&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
